@@ -1,0 +1,19 @@
+digraph {
+	subgraph "cluster_java" {
+		label = "Tomcat";
+		API -> "Nginx?";
+		www -> "Nginx?";
+		"Nginx?" -> Tomcat -> "Nodejs" -> "Frontend SSR";
+		Tomcat -> Java -> Backend;
+	}
+
+	subgraph "cluster_nginx" {
+		label = "Nginx";
+		"API " -> "Nginx";
+		"www " -> Nginx;
+		Nginx -> "Tomcat?" -> "Java " -> "Backend ";
+		Nginx -> "Nodejs " -> "Frontend SSR ";
+		/* "Nginx?" -> Tomcat -> "Nodejs" -> "Frontend SSR"; */
+		/* Tomcat -> Java -> Backend; */
+	}
+}
