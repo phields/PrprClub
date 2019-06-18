@@ -1,4 +1,4 @@
 [submodule "Packages/tensorflow"]
 	path = Packages/tensorflow
-	url = https://github.com/tensorflow/tensorflow。git
+	url = https://github.com/tensorflow/tensorflow.git
 	branch = master
