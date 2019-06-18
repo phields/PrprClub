@@ -1,6 +1,9 @@
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
 .DS_Store
-node_modules
-/dist
 
 # local env files
 .env.local
@@ -19,3 +22,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+*.vcxproj.user
+node_modules
+/dist
