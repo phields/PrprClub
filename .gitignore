@@ -25,3 +25,6 @@ yarn-error.log*
 *.vcxproj.user
 node_modules
 /dist
+
+# You can save all files you want to ignore into the "temp" folder. 
+/temp
