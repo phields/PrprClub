@@ -3,10 +3,10 @@
     <el-main>
       <img src="@/assets/bvtb.jpeg" class="headPic">
       <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
-        <el-menu-item>
+        <el-menu-item index="/discover/home">
           <svg-icon iconClass="logoBlue" width="134.34" height="60"/>
         </el-menu-item>
-        <el-menu-item index="/discover/home">发现</el-menu-item>
+        <!-- <el-menu-item index="/discover/home">发现</el-menu-item> -->
         <el-menu-item index="/discover/dynamics">动态</el-menu-item>
         <el-menu-item index="/discover/adoption">领养</el-menu-item>
         <el-menu-item index="/discover/about">关于我们</el-menu-item>
