@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
-import '../theme/element-#409eff/index.css'
+import 'element-ui/lib/theme-chalk/index.css';
 import Element from 'element-ui'
 import './plugins/element.js'
 

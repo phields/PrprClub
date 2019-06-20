@@ -1,3 +1,4 @@
+//自动换肤 BY Il Harper，请勿更改
 function ChangeTheme(val, oldVal) {
     if (typeof val !== 'string') return
     const themeCluster = getThemeCluster(val.replace('#', ''))
