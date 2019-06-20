@@ -7,8 +7,7 @@
           <el-menu-item index="/discover/dynamics">动态</el-menu-item>
           <el-menu-item index="/discover/adoption">领养</el-menu-item>
           <el-menu-item index="/discover/about">关于我们</el-menu-item>
-          <span></span>
-          <el-menu-item index="/dashboard">仪表板</el-menu-item>
+          <el-menu-item index="/dashboard" style="float: right;">仪表板</el-menu-item>
         </el-menu>
       <router-view></router-view>
     </el-main>
@@ -32,6 +31,19 @@ export default {
     return {
       activeIndex: '/discover/home'
     }
+  },
+    watch: {
+    '$route' (to, from) {
+      this.activeIndex = to.path;
+    }
   }
 }
 </script>
+
+<style>
+
+.headPic {
+  width: 100%;
+}
+
+</style>

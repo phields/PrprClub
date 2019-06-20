@@ -10,7 +10,7 @@
       </el-col>
       <el-col :span="6">
         <div>
-          Copyright 2019
+          Copyright PrprClub 2019
         </div>
       </el-col>
     </el-row>

@@ -2,7 +2,7 @@
 <div>
   <el-main>
     <el-row>
-      <el-col :span="16" :offset="4">
+      <el-col :span="20" :offset="2">
         <div class="about">
           <h1>公司介绍
             <br>
@@ -16,3 +16,13 @@
   </el-main>
 </div>
 </template>
+
+<style>
+
+.about {
+  padding: 50px;
+  margin: 5px;
+  background-color: #f1f1f1;
+}
+
+</style>

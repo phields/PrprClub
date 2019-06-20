@@ -23,15 +23,14 @@ export default {
 
 html {
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 body {
     margin: 0;
-}
-.about {
-  padding: 32px;
-  margin: 10px;
-  background-color: #f1f1f1;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -42,15 +41,13 @@ h1>small {
   font-size: 20px;
   color: gray;
 }
-.headPic {
-  width: 100%;
-}
 
 .el-main {
   padding: 0;
+  margin: 0;
 }
 
 .menu {
-  margin: 0 20px;
+  margin: 0;
 }
 </style>
