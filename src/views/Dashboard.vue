@@ -1,7 +1,7 @@
 <template>
 <el-container>
   <el-main>
-    <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
+    <el-menu default-active="/dashboard/me" mode="horizontal" router class="menu">
       <el-menu-item index="/dashboard/me">我</el-menu-item>
       <el-menu-item index="/dashboard/works">作品</el-menu-item>
       <el-menu-item index="/dashboard/projects">企划</el-menu-item>
