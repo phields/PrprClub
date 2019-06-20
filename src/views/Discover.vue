@@ -2,7 +2,7 @@
   <el-container>
     <el-main>
         <img src="@/assets/bvtb.jpeg" class="headPic">
-        <el-menu default-active="/discover/home" mode="horizontal" router class="menu">
+        <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
           <el-menu-item index="/discover/home">发现</el-menu-item>
           <el-menu-item index="/discover/dynamics">动态</el-menu-item>
           <el-menu-item index="/discover/adoption">领养</el-menu-item>
@@ -20,11 +20,17 @@ import { ChangeTheme } from '../ThemePicker'
 export default {
   name: 'discover',
   mounted: function () {
+    this.activeIndex = this.$route.path;
     this.chTheme()
   },
   methods: {
     chTheme: function () {
       ChangeTheme('#409eff', '#ff48cb')
+    }
+  },
+  data: function () {
+    return {
+      activeIndex: '/discover/home'
     }
   }
 }
