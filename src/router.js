@@ -9,6 +9,7 @@ export default new Router({
   routes: [{
     path: '/dashboard',
     name: 'dashboard',
+    redirect: '/dashboard/me',
     component: () =>
                 import('./views/Dashboard.vue'),
     children: [{
@@ -41,6 +42,7 @@ export default new Router({
   {
     path: '/discover',
     name: 'discover',
+    redirect: '/discover/home',
     component: () =>
                 import('./views/Discover.vue'),
     children: [{

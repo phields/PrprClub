@@ -5,7 +5,7 @@
     <el-row type="flex" justify="space-around">
       <el-col :span="6">
         <div>
-          <router-link to="/discover/about" class="link">关于我们</router-link>
+          <el-link @click="GotoAbout" class="link">关于我们</el-link>
         </div>
       </el-col>
       <el-col :span="6">
@@ -20,6 +20,11 @@
 
 <script>
 export default {
-  name: 'pfooter'
+  name: 'pfooter',
+  methods: {
+    GotoAbout : function () {
+      this.$router.push('/discover/about')
+    }
+  }
 }
 </script>

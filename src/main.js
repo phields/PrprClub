@@ -5,7 +5,7 @@ import store from './store'
 import './registerServiceWorker'
 import 'element-ui/lib/theme-chalk/index.css'
 import Element from 'element-ui'
-import './plugins/element.js'
+// import './plugins/element.js'
 
 Vue.config.productionTip = false
 
