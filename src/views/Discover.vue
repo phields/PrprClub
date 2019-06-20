@@ -14,3 +14,17 @@
   </el-main>
 </el-container>
 </template>
+
+<script>
+import { ChangeTheme } from '../ThemePicker'
+export default {
+  name: 'discover',
+  mounted: function () {
+    this.chTheme();
+  },
+  methods: {chTheme : function() {
+    ChangeTheme('#409eff', '#ff48cb')
+  }
+  }
+}
+</script>

@@ -3,14 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+import '../theme/element-#409eff/index.css'
 import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 import './plugins/element.js'
-
 
 Vue.config.productionTip = false
 
-Vue.use(Element, { size: 'small' });
+Vue.use(Element, { size: 'small' })
 
 new Vue({
     router,

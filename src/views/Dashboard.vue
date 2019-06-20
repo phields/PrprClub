@@ -1,7 +1,6 @@
 <template>
 <el-container>
   <el-main>
-    <img src="@/assets/bvtb.jpeg" class="headPic">
     <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
       <el-menu-item index="/dashboard/me">我</el-menu-item>
       <el-menu-item index="/dashboard/works">作品</el-menu-item>
@@ -15,3 +14,17 @@
   </el-main>
 </el-container>
 </template>
+
+<script>
+import { ChangeTheme } from '../ThemePicker'
+export default {
+  name: 'discover',
+  mounted: function () {
+    this.chTheme();
+  },
+  methods: {chTheme : function() {
+    ChangeTheme('#ff48cb', '#409eff')
+  }
+  }
+}
+</script>
