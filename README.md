@@ -6,6 +6,10 @@ qn❘ↃɹdɹԀ
 
 加油! by 什么都不会的NEO
 
+> Il Harper:
+
+fe-demo的branch可以拆掉了。
+
 > 06-20 Il Harper的废话更多了：
 
 首先我建议每人commit前都跑一遍eslint再commit
