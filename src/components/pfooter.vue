@@ -22,7 +22,7 @@
 export default {
   name: 'pfooter',
   methods: {
-    GotoAbout : function () {
+    GotoAbout: function () {
       this.$router.push('/discover/about')
     }
   }
