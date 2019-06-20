@@ -6,7 +6,17 @@ qn❘ↃɹdɹԀ
 
 加油! by 什么都不会的NEO
 
-> Il Harper胡思乱想写下了以下文字：
+> 06-20 Il Harper的废话更多了：
+
+首先我建议每人commit前都跑一遍eslint再commit
+
+然后页面间的Router架构已经做完了（静静看），然后npm加持个Element就好www
+
+router.js那里有个'/'的路由不知道放什么好，看你们
+
+[这里](https://github.com/phields/PrprClub/graphs/contributors)可以方便地看到每人贡献的代码行数，工资你们分，给我多少都行（真的都行）
+
+> 06-18 Il Harper胡思乱想写下了以下文字：
 
 ## Pages (Based on Vue-Router)
 
