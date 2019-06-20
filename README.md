@@ -10,6 +10,8 @@ qn❘ↃɹdɹԀ
 
 fe-demo的branch可以拆掉了。
 
+**请勿修改icons文件夹和vue.config.js。**
+
 > 06-20 Il Harper的废话更多了：
 
 首先我建议每人commit前都跑一遍eslint再commit
