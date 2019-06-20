@@ -20,9 +20,9 @@ import { ChangeTheme } from '../ThemePicker'
 export default {
   name: 'discover',
   mounted: function () {
-    this.chTheme();
+    this.chTheme()
   },
-  methods: {chTheme : function() {
+  methods: { chTheme: function () {
     ChangeTheme('#ff48cb', '#409eff')
   }
   }
