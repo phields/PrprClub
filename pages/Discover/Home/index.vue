@@ -2,9 +2,10 @@
   <div>
     <el-main>
       <el-row>
-        <el-carousel height="150px">
+        <!-- :interval="4000" type="card"-->
+        <el-carousel trigger="click" height="200px">
           <el-carousel-item v-for="item in 4" :key="item">
-            <!--Content Here-->
+            <img src="@/assets/bvtb.jpeg" class="headPic">
           </el-carousel-item>
         </el-carousel>
       </el-row>
@@ -13,12 +14,11 @@
 </template>
 
 <style>
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
 
-  .el-carousel__item:nth-child(2n) {
-     background-color: #99a9bf;
-  }
-
-  .el-carousel__item:nth-child(2n+1) {
-     background-color: #d3dce6;
-  }
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
 </style>

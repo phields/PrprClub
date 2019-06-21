@@ -30,11 +30,12 @@ module.exports = {
   loading: { color: '#fff' },
   plugins: ['~plugins/ElementUI', '~/plugins/svg-icon'],
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '~/assets/main.scss'
   ],
   build: {
-    // axios
-    vendor: ['vuex', 'element-ui'],
+    // axios 需要的话到时候在这里引进去，vuex不用，nuxt自动加入了已经
+    vendor: ['element-ui'],
     loaders: [{
       test: /\.(png|jpe?g|gif)(\?.*)?$/,
       loader: 'url-loader',

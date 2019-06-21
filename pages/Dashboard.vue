@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ChangeTheme } from '../ThemePicker'
+import { ChangeTheme } from '../utils/ThemePicker'
 export default {
   name: 'discover',
   components: {

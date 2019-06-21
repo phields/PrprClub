@@ -1,7 +1,6 @@
 <template>
   <el-container>
     <el-main>
-      <img src="@/assets/bvtb.jpeg" class="headPic">
       <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
         <el-menu-item index="/discover/home">
           <svg-icon iconClass="logoBlue" width="134.34" height="60"/>
@@ -18,7 +17,7 @@
 </template>
 
 <script>
-import { ChangeTheme } from '../ThemePicker'
+import { ChangeTheme } from '../utils/ThemePicker'
 export default {
   name: 'discover',
   components: {
