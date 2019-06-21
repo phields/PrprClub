@@ -9,9 +9,25 @@
           </el-carousel-item>
         </el-carousel>
       </el-row>
+      <el-row><el-button @click="popupVisible = true">Click Me! </el-button></el-row>
     </el-main>
+    <work-popup :workId="workId" :visible="popupVisible" @go-privious="workId--" @go-next="workId++"
+    @closed="popupVisible = false"></work-popup>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      workId: 0,
+      popupVisible: false
+    }
+  },
+  methods: {
+  }
+}
+</script>
 
 <style>
 .el-carousel__item:nth-child(2n) {
