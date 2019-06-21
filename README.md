@@ -12,7 +12,9 @@ qn❘ↃɹdɹԀ
 
 **已经更新npm run命令。请使用npm run dev或者是vue ui而非nuxt。**
 
-**请注意，所有在components里面的组件都已经全局注册，请不要另行注册。使用小写字符（如`<pfooter>`）即可引用组件。**
+**请注意，所有在plugins里面的组件都已经全局注册，请不要另行注册。使用小写字符（如`<pfooter>`）即可引用组件。**
+
+**components中的组件仍需手动引用。**
 
 > Il Harper:
 

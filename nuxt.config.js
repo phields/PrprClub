@@ -28,13 +28,13 @@ module.exports = {
 
   },
   loading: { color: '#fff' },
-  plugins: ['~/plugins/ElementUI', '~/plugins/svg-icon', '~/components/components'],
+  plugins: ['~/plugins/ElementUI', '~/plugins/plugins', '~/components/svgicon'],
   css: [
     'element-ui/lib/theme-chalk/index.css',
     '~/assets/main.scss'
   ],
   build: {
-    // axios 需要的话到时候在这里引进去，vuex不用，nuxt自动加入了已经
+    // axios 需要的话到时候在这里引进去，vuex不用，已经被nuxt自动加入了
     vendor: ['element-ui'],
     loaders: [{
       test: /\.(png|jpe?g|gif)(\?.*)?$/,
