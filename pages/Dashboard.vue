@@ -3,7 +3,7 @@
   <el-main>
     <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
         <el-menu-item index="/dashboard/me">
-          <svg-icon iconClass="logoPink" width="134.34" height="60"/>
+          <svgicon iconClass="logoPink" width="134.34" height="60"/>
         </el-menu-item>
       <!-- <el-menu-item index="/dashboard/me">我</el-menu-item> -->
       <el-menu-item index="/dashboard/works">作品</el-menu-item>

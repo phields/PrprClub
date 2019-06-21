@@ -3,7 +3,7 @@
     <el-main>
       <el-menu :default-active="activeIndex" mode="horizontal" router class="menu">
         <el-menu-item index="/discover/home">
-          <svg-icon iconClass="logoBlue" width="134.34" height="60"/>
+          <svgicon iconClass="logoBlue" width="134.34" height="60"/>
         </el-menu-item>
         <!-- <el-menu-item index="/discover/home">发现</el-menu-item> -->
         <el-menu-item index="/discover/dynamics">动态</el-menu-item>

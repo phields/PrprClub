@@ -2,7 +2,7 @@
   <div>
     <el-main>
       <el-row>
-        <!-- :interval="4000" type="card"-->
+        <!--Interval自定呗，card只适用于长宽比距离1比较近的图像 :interval="4000" type="card"-->
         <el-carousel trigger="click" height="200px">
           <el-carousel-item v-for="item in 4" :key="item">
             <img src="@/assets/bvtb.jpeg" class="headPic">

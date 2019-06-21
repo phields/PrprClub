@@ -6,7 +6,7 @@ import camelCase from 'lodash/camelCase'
 const requireComponent = require.context('~/plugins', true, /.vue$/)
 
 requireComponent.keys().forEach(fileName => {
-    console.log(fileName);
+    //console.log(fileName);
     // Get component config
     const componentConfig = requireComponent(fileName)
 
@@ -16,7 +16,11 @@ requireComponent.keys().forEach(fileName => {
 
     )
 
-    console.log(componentName)
-        // Register component globally
+    //console.log(componentName)
+    // Register component globally
     Vue.component(componentName, componentConfig.default || componentConfig)
 })
+
+const requireAll = requireContext => requireContext.keys().map(requireContext)
+const req = require.context('~/assets/svg', false, /\.svg$/)
+requireAll(req)
