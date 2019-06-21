@@ -1,17 +1,12 @@
 <template>
   <div id="app">
     <nuxt/>
-    <p-footer></p-footer>
+    <pfooter></pfooter>
   </div>
 </template>
 
 <script>
-import PFooter from '~/components/pfooter'
-
 export default {
-  name: 'app',
-  components: {
-    PFooter
-  }
+  name: 'app'
 }
 </script>
