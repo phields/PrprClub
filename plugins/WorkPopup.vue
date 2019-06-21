@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       isLoading: true,
-      work: GetWork(0)
+      work: GetWork('0')
     };
   },
   mounted() {
