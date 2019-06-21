@@ -10,6 +10,8 @@ qn❘ↃɹdɹԀ
 
 已经迁移到了Nuxt。查阅NuxtNotice.md获取信息。
 
+**已经更新npm run命令。请使用npm run dev或者是vue ui而非nuxt。**
+
 > Il Harper:
 
 fe-demo的branch可以拆掉了。
