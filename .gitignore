@@ -28,3 +28,6 @@ node_modules
 
 # You can save all files you want to ignore into the "temp" folder. 
 /temp
+
+# FOR NUXT
+/.nuxt

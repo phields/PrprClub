@@ -10,9 +10,9 @@
       <el-menu-item index="/dashboard/projects">企划</el-menu-item>
       <el-menu-item index="/dashboard/messages">消息</el-menu-item>
       <el-menu-item index="/dashboard/settings">设置</el-menu-item>
-      <el-menu-item index="/discover" style="float: right;">发现</el-menu-item>
+      <el-menu-item index="/discover/home" style="float: right;">发现</el-menu-item>
     </el-menu>
-    <router-view></router-view>
+    <nuxt-child/>
   </el-main>
 </el-container>
 </template>

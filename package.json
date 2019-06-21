@@ -5,10 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "nuxt",
+    "build:ssr": "nuxt build",
+    "serve:ssr": "nuxt start",
+    "generate:ssr": "nuxt generate",
+    "lint:ssr": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit:ssr": "npm run lint"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "nuxt": "^2.8.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
@@ -22,9 +29,11 @@
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-component": "^1.1.1",
+    "element-ui": "^2.9.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
+    "nuxt": "^2.8.1",
     "sass-loader": "^7.1.0",
     "svg-sprite-loader": "^4.1.6",
     "svgo": "^1.2.2",

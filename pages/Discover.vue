@@ -10,9 +10,9 @@
         <el-menu-item index="/discover/dynamics">动态</el-menu-item>
         <el-menu-item index="/discover/adoption">领养</el-menu-item>
         <el-menu-item index="/discover/about">关于我们</el-menu-item>
-        <el-menu-item index="/dashboard" style="float: right;">仪表板</el-menu-item>
+        <el-menu-item index="/dashboard/me" style="float: right;">仪表板</el-menu-item>
       </el-menu>
-      <router-view></router-view>
+      <nuxt-child/>
     </el-main>
   </el-container>
 </template>

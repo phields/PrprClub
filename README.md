@@ -6,6 +6,10 @@ qn❘ↃɹdɹԀ
 
 加油! by 什么都不会的NEO
 
+> 06-21 Il Harper
+
+已经迁移到了Nuxt。查阅NuxtNotice.md获取信息。
+
 > Il Harper:
 
 fe-demo的branch可以拆掉了。
