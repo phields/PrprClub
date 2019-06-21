@@ -28,7 +28,7 @@ module.exports = {
 
   },
   loading: { color: '#fff' },
-  plugins: ['~plugins/ElementUI', '~/plugins/svg-icon'],
+  plugins: ['~/plugins/ElementUI', '~/plugins/svg-icon', '~/components/components'],
   css: [
     'element-ui/lib/theme-chalk/index.css',
     '~/assets/main.scss'
