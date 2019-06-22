@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="提示"
+  <el-dialog :title="work.Name"
              :visible.sync="visible"
              height="90%"
              width="90%"
