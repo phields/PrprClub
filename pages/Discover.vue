@@ -17,20 +17,14 @@
 </template>
 
 <script>
-import { ChangeTheme } from '../utils/ThemePicker'
 export default {
   name: 'discover',
   components: {
   },
   mounted: function () {
     this.activeIndex = this.$route.path
-    this.chTheme()
   },
-  methods: {
-    chTheme: function () {
-      ChangeTheme('#409eff', '#ff48cb')
-    }
-  },
+  methods: {},
   data: function () {
     return {
       activeIndex: '/discover/home'
@@ -43,9 +37,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.headPic {
-  width: 100%;
-}
-</style>
