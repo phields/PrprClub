@@ -1,0 +1,98 @@
+/* - 账户系统
+  - 数据/功能/后端
+    - 用户名和密码
+      - 不能重复的用户名
+    - 顺序数字ID
+    - 手机验证
+      - Aliyun
+    - ~~邮箱验证~~
+    - ~~2FA~~
+    - 绑定Bilibili账号
+    - 找回密码功能
+    - 账户可以是中之人账户，作品（live2d等）作者用户。
+  - 前端
+    - 登陆，状态
+    - 注册页面
+    - 以上功能相关页面
+- 企划
+  - 数据/功能/后端
+    - 数字ID
+    - 立绘/人设：对应作品ID
+    - live2d：对应作品ID
+    - 3D：对应作品ID
+    - 中之人：对应账户ID
+    - ~~评论~~
+  - 前端
+    - 显示以上状态
+- 作品：立绘/live2d/3D
+  - 数据/功能/后端
+    - 数字ID
+    - 是个live2d还是个3D什么的
+    - ~~评论~~
+    - 浏览照
+  - 前端
+    - 显示呗 */
+
+
+
+digraph {
+	subgraph "cluster_fe" {
+		label = "前端";
+		subgraph "cluster_fedis" {
+			label = "Discover";
+			几个排行榜;
+		}
+		subgraph "cluster_fed" {
+			label = "Dashbord";
+			注册;
+			登陆;
+			用户设置;
+		}
+	}
+	subgraph "cluster_be" {
+		label = "Java后端";
+		subgraph "cluster_dbu" {
+			label = "用户系统";
+			"用户注册Service";
+			"用户登陆验证Service";
+			"各种用户的操作";
+			"手机验证Service";
+			"绑定bilibili_Service";
+			"找回密码等目前不需要立即做的功能";
+		}
+		subgraph "cluster_dbp" {
+			label = "企划管理";
+			"神奇的玄学排名Service"
+			"申请成为中之人";
+			"提交作品";
+		}
+	}
+	/* subgraph "cluster_db" { */
+		/* label = "数据库"; */
+		subgraph "cluster_dbu" {
+			label = "用户数据库";
+			username;
+			"password(bcrypt)";
+			email;
+			uid;
+			头像;
+			phoneNumber;
+			"该用户的作品";
+			"bilibiliMid";
+		}
+		subgraph "cluster_dbw" {
+			label = "作品数据库";
+			数字ID;
+			"立绘/live2d/3d";
+			浏览照;
+		}
+	/* } */
+	注册 -> 用户注册Service -> 手机验证Service;
+
+	登陆 -> 用户登陆验证Service;
+	用户设置 -> 用户登陆验证Service -> 各种用户的操作;
+
+	几个排行榜 -> "神奇的玄学排名Service";
+
+"数据库操作不写了→_→";
+}
