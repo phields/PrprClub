@@ -1,0 +1,5 @@
+<template>
+  <div>
+    <h1>大家好我是一位用户ID是{{$route.params.authorId}}的“个人空间”页面。</h1>
+  </div>
+</template>

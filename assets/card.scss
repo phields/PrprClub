@@ -1,0 +1,36 @@
+.description {
+    font-size: 13px;
+    color: #999;
+}
+
+.button {
+    margin: 3px;
+    float: right;
+}
+
+.image {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.card {
+    margin: 12px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+h2 {
+    text-align: center;
+}

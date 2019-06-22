@@ -6,7 +6,41 @@ qn❘ↃɹdɹԀ
 
 加油! by 什么都不会的NEO
 
-> Il Harper胡思乱想写下了以下文字：
+## 各种MarkDown
+
+* Interface.md 前后端通信指南
+
+* NuxtNotice.md 迁移到Nuxt后大家需要注意的事情
+
+* Components.md 组件使用指南
+
+> 06-21 Il Harper
+
+已经迁移到了Nuxt。查阅NuxtNotice.md获取信息。
+
+**已经更新npm run命令。请使用npm run dev或者是vue ui而非nuxt。**
+
+**请注意，所有在plugins里面的组件都已经全局注册，请不要另行注册。使用小写字符（如`<pfooter>`）即可引用组件。**
+
+**components中的组件仍需手动引用。**
+
+> Il Harper:
+
+fe-demo的branch可以拆掉了。
+
+**请勿修改icons文件夹和vue.config.js。**
+
+> 06-20 Il Harper的废话更多了：
+
+首先我建议每人commit前都跑一遍eslint再commit
+
+然后页面间的Router架构已经做完了（静静看），然后npm加持个Element就好www
+
+router.js那里有个'/'的路由不知道放什么好，看你们
+
+[这里](https://github.com/phields/PrprClub/graphs/contributors)可以方便地看到每人贡献的代码行数，工资你们分，给我多少都行（真的都行）
+
+> 06-18 Il Harper胡思乱想写下了以下文字：
 
 ## Pages (Based on Vue-Router)
 
