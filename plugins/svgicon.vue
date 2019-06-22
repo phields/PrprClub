@@ -1,4 +1,3 @@
-<!--SVG Compnent BY Il Harper. 请勿修改。-->
 <template>
   <svg :class="svgClass" aria-hidden="true">
     <use :xlink:href="iconName"/>
