@@ -4,15 +4,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default function() {
-    return new Vuex.Store({
-        state: {
+  return new Vuex.Store({
+    state: {
 
-        },
-        mutations: {
+    },
+    mutations: {
 
-        },
-        actions: {
+    },
+    actions: {
 
-        }
-    })
+    }
+  })
 }

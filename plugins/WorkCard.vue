@@ -21,29 +21,29 @@
 </template>
 
 <script>
-import { GetWork } from "../parsers/WorkParser";
+import { GetWork } from '../parsers/WorkParser'
 export default {
-  props: ["workId", "size"],
-  name: "WorkCard",
+  props: ['workId', 'size'],
+  name: 'WorkCard',
   data() {
     return {
-      work: GetWork("0")
-    };
+      work: GetWork('0')
+    }
   },
   mounted() {
-    this.loadData();
+    this.loadData()
   },
   methods: {
     loadData: function() {
-      this.work = GetWork(this.workId);
+      this.work = GetWork(this.workId)
     }
   },
   watch: {
     workId: function(newId, oldId) {
-      this.loadData();
+      this.loadData()
     }
   }
-};
+}
 </script>
 
 <style>

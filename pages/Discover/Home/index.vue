@@ -43,15 +43,15 @@ export default {
     return {
       workId: '0',
       popupVisible: false
-    };
+    }
   },
   methods: {
     open(id) {
-      this.workId = id;
-      this.popupVisible = true;
+      this.workId = id
+      this.popupVisible = true
     }
   }
-};
+}
 </script>
 
 <style>

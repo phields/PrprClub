@@ -10,32 +10,32 @@
 </template>
 
 <script>
-import { GetWork } from "../parsers/WorkParser";
+import { GetWork } from '../parsers/WorkParser'
 export default {
-  props: ["workId", "visible"],
-  name: "WorkPopup",
+  props: ['workId', 'visible'],
+  name: 'WorkPopup',
   data() {
     return {
       isLoading: true,
       work: GetWork('0')
-    };
+    }
   },
   mounted() {
-    this.loadData();
+    this.loadData()
   },
   methods: {
     loadData: function() {
-      this.isLoading = true;
-      this.work = GetWork(this.workId);
-      this.isLoading = false;
+      this.isLoading = true
+      this.work = GetWork(this.workId)
+      this.isLoading = false
     }
   },
   watch: {
     workId: function(newId, oldId) {
-      this.loadData();
+      this.loadData()
     }
   }
-};
+}
 </script>
 
 <style lang="sass">
