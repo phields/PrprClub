@@ -14,8 +14,9 @@
       <el-divider></el-divider>
     </div>
     <div>
-      <el-button type="text" class="button">Share</el-button>
+      <el-button type="text" class="button" @click="pushNavigation">详情</el-button>
       <el-button type="text" class="button">Like</el-button>
+      <el-button type="text" class="button">Share</el-button>
     </div>
   </el-card>
 </template>
@@ -36,6 +37,9 @@ export default {
   methods: {
     loadData: function() {
       this.work = GetWork(this.workId)
+    },
+    pushNavigation() {
+      this.$router.push('/discover/' + this.work.Type + '/' + this.workId)
     }
   },
   watch: {

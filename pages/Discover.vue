@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     switchNav(p) {
-      // 请勿更改该方法。
       try {
         p.split('/').forEach(element => {
           let finished = true
@@ -65,7 +64,9 @@ export default {
               finished = false
               break
           }
-          if (finished) { throw new Error('***THIS IS NOT A ERROR***SwitchNav() Complete. ') }
+          if (finished) {
+            throw new Error('***THIS IS NOT A ERROR***SwitchNav() Complete. ')
+          }
         })
       } catch (e) {}
     }
