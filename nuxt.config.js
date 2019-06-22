@@ -32,7 +32,6 @@ module.exports = {
     '~/assets/main.scss'
   ],
   build: {
-    vendor: ['element-ui', 'axios'],
     loaders: [{
       test: /\.(png|jpe?g|gif)(\?.*)?$/,
       loader: 'url-loader',
