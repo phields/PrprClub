@@ -5,16 +5,16 @@ import camelCase from 'lodash/camelCase'
 const requireComponent = require.context('~/plugins', true, /.vue$/)
 
 requireComponent.keys().forEach(fileName => {
-    // console.log(fileName);
-    const componentConfig = requireComponent(fileName)
+  // console.log(fileName);
+  const componentConfig = requireComponent(fileName)
 
-    const componentName = upperFirst(
-        camelCase(fileName.replace(/^\.\//, '').replace(/\.\w+$/, ''))
+  const componentName = upperFirst(
+    camelCase(fileName.replace(/^\.\//, '').replace(/\.\w+$/, ''))
 
-    )
+  )
 
-    // console.log(componentName)
-    Vue.component(componentName, componentConfig.default || componentConfig)
+  // console.log(componentName)
+  Vue.component(componentName, componentConfig.default || componentConfig)
 })
 
 const requireAll = requireContext => requireContext.keys().map(requireContext)
