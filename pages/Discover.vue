@@ -13,7 +13,7 @@
         <el-menu-item index="/discover/project">企划</el-menu-item>
         <el-menu-item index="/discover/space">创作者</el-menu-item>
         <el-menu-item index="/discover/adoption">领养</el-menu-item>
-        <el-menu-item index="/discover/about">关于我们</el-menu-item>
+        <!-- <el-menu-item index="/discover/about">关于我们</el-menu-item> -->
         <el-menu-item index="/dashboard/me" style="float: right;">仪表板</el-menu-item>
       </el-menu>
       <nuxt-child/>
@@ -31,39 +31,43 @@ export default {
   },
   methods: {
     switchNav(p) {
-      p.split('/').forEach(element => {
-        switch (element) {
-          case 'home':
-            this.activeIndex = '/discover/home'
-            break
-          case 'dynamics':
-            this.activeIndex = '/discover/dynamics'
-            break
-          case 'drawing':
-            this.activeIndex = '/discover/drawing'
-            break
-          case 'live2d':
-            this.activeIndex = '/discover/live2d'
-            break
-          case 'model':
-            this.activeIndex = '/discover/model'
-            break
-          case 'project':
-            this.activeIndex = '/discover/project'
-            break
-          case 'space':
-            this.activeIndex = '/discover/space'
-            break
-          case 'adoption':
-            this.activeIndex = '/discover/adoption'
-            break
-          case 'about':
-            this.activeIndex = '/discover/about'
-            break
-          default:
-            break
-        }
-      })
+      // 请勿更改该方法。
+      try {
+        p.split('/').forEach(element => {
+          let finished = true
+          switch (element) {
+            case 'home':
+              this.activeIndex = '/discover/home'
+              break
+            case 'dynamics':
+              this.activeIndex = '/discover/dynamics'
+              break
+            case 'drawing':
+              this.activeIndex = '/discover/drawing'
+              break
+            case 'live2d':
+              this.activeIndex = '/discover/live2d'
+              break
+            case 'model':
+              this.activeIndex = '/discover/model'
+              break
+            case 'project':
+              this.activeIndex = '/discover/project'
+              break
+            case 'space':
+              this.activeIndex = '/discover/space'
+              break
+            case 'adoption':
+              this.activeIndex = '/discover/adoption'
+              break
+            default:
+              this.activeIndex = '/discover/home'
+              finished = false
+              break
+          }
+          if (finished) { throw new Error('***THIS IS NOT A ERROR***SwitchNav() Complete. ') }
+        })
+      } catch (e) {}
     }
   },
   data: function() {
