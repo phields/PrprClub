@@ -28,24 +28,6 @@
     "mail": {
       "type": "string"
     },
-    "drawing": {
-      "type": "array",
-      "items": {
-        "type": "number"
-      }
-    },
-    "live2d": {
-      "type": "array",
-      "items": {
-        "type": "number"
-      }
-    },
-    "model": {
-      "type": "array",
-      "items": {
-        "type": "number"
-      }
-    },
     "drawTotal": {
       "type": "number"
     },

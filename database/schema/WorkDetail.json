@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PrprClub Database Work Detail",
+  "description": "PrprClub Database Work Detail",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "descrip": {
+      "type": "string"
+    },
+    "author": {
+      "type": "number"
+    },
+    "date": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}
