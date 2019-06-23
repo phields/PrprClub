@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "PrprClub Database User Detail",
+    "description": "PrprClub Database User Detail",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "male": {
+            "type": "boolean"
+        },
+        "birth": {
+            "type": "string"
+        },
+        "descrip": {
+            "type": "string"
+        },
+        "icon": {
+            "type": "string"
+        },
+        "uid": {
+            "type": "null"
+        },
+        "mobile": {
+            "type": "string"
+        },
+        "mail": {
+            "type": "string"
+        },
+        "drawing": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "live2d": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "model": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "price"
+    ]
+}
