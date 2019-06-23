@@ -8,6 +8,8 @@ qn❘ↃɹdɹԀ
 
 ## 各种MarkDown
 
+* UserAuth.md 用户登录指南
+
 * Interface.md 前后端通信指南
 
 * NuxtNotice.md 迁移到Nuxt后大家需要注意的事情

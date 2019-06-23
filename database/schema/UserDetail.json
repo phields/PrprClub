@@ -54,6 +54,12 @@
     },
     "modelTotal": {
       "type": "number"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }
