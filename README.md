@@ -8,11 +8,25 @@ qn❘ↃɹdɹԀ
 
 ## 各种MarkDown
 
+* UserAuth.md 用户登录指南
+
 * Interface.md 前后端通信指南
 
 * NuxtNotice.md 迁移到Nuxt后大家需要注意的事情
 
 * Components.md 组件使用指南
+
+> 06-22 Il Harper
+
+要在页面内部实现刷新，请使用DI。Eg：
+
+`inject: ['reload']`后直接调用`this.reload()`。
+
+关于头像上传，请参阅：[vue-image-crop-upload](https://github.com/dai-siki/vue-image-crop-upload)
+
+请查阅甲♂方所给的最新Req（在Trello）。
+
+关于Contributions，[这里](https://help.github.com/en/articles/why-are-my-contributions-not-showing-up-on-my-profile)可供参考。
 
 > 06-21 Il Harper
 
@@ -67,3 +81,4 @@ router.js那里有个'/'的路由不知道放什么好，看你们
 * 网站各处都应该（不应过于突出）地插入“让用户成为创作者”的提示。你看哔哩哔哩在手机app的个人空间页中给不是大会员的用户也放上了灰色的“大会员”的badge，这样很明显能够促使用户点进去www
 
 > 好了废话说的太多了我去撸代码了www
+yeah!

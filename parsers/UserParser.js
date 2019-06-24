@@ -1,11 +1,11 @@
-function GetUser(id) {
+function GetUser (id) {
   return {
     Name: 'User.Name',
     WorkType: 0
   }
 }
 
-function GetUserDetail(id) {
+function GetUserDetail (id) {
   return {
     Name: 'User.Name' + id,
     Description: 'User.Description',

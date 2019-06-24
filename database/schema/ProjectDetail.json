@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PrprClub Database Project Detail",
+  "description": "PrprClub Database Project Detail",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "descrip": {
+      "type": "string"
+    },
+    "draw": {
+      "type": "number"
+    },
+    "live2d": {
+      "type": "number"
+    },
+    "model": {
+      "type": "number"
+    },
+    "drawAuthor": {
+      "type": "number"
+    },
+    "live2dAuthor": {
+      "type": "number"
+    },
+    "modelAuthor": {
+      "type": "number"
+    },
+    "date": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "number"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-function GetProject(id) {
+function GetProject (id) {
   return {
     Name: 'Project.Name' + id,
     Description: 'Project.Description',

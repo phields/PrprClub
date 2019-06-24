@@ -56,3 +56,30 @@ h1>small {
     text-align: center;
     vertical-align: middle;
 }
+
+.icon_img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    margin-top: 15px;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -15px;
+}
+
+.icon_img_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame {
+    margin: 12px;
+}
