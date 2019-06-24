@@ -4,23 +4,33 @@
              mode="horizontal"
              router
              class="menu">
-      <el-menu-item index="/">
+      <el-menu-item index="/"
+                    @click="checkReload('/')">
         <svgicon :iconClass="headIcon"
                  width="134.34"
                  height="60" />
       </el-menu-item>
       <!-- <el-menu-item index="/">发现</el-menu-item> -->
-      <el-menu-item index="/dynamics"><i class="el-icon-s-promotion"></i>动态</el-menu-item>
-      <el-menu-item index="/drawing"><i class="el-icon-picture-outline-round"></i>立绘</el-menu-item>
-      <el-menu-item index="/live2d"><i class="el-icon-help"></i>Live2D</el-menu-item>
-      <el-menu-item index="/model"><i class="el-icon-video-camera"></i>3D模型</el-menu-item>
-      <el-menu-item index="/project"><i class="el-icon-s-order"></i>企划</el-menu-item>
-      <el-menu-item index="/space"><i class="el-icon-s-custom"></i>创作者</el-menu-item>
-      <el-menu-item index="/adoption"><i class="el-icon-circle-plus-outline"></i>领养</el-menu-item>
+      <el-menu-item index="/dynamics"
+                    @click="checkReload('/dynamics')"><i class="el-icon-s-promotion"></i>动态</el-menu-item>
+      <el-menu-item index="/drawing"
+                    @click="checkReload('/drawing')"><i class="el-icon-picture-outline-round"></i>立绘</el-menu-item>
+      <el-menu-item index="/live2d"
+                    @click="checkReload('/live2d')"><i class="el-icon-help"></i>Live2D</el-menu-item>
+      <el-menu-item index="/model"
+                    @click="checkReload('/model')"><i class="el-icon-video-camera"></i>3D模型</el-menu-item>
+      <el-menu-item index="/project"
+                    @click="checkReload('/project')"><i class="el-icon-s-order"></i>企划</el-menu-item>
+      <el-menu-item index="/space"
+                    @click="checkReload('/space')"><i class="el-icon-s-custom"></i>创作者</el-menu-item>
+      <el-menu-item index="/adoption"
+                    @click="checkReload('/adoption')"><i class="el-icon-circle-plus-outline"></i>领养</el-menu-item>
       <!-- <el-menu-item index="/about">关于我们</el-menu-item> -->
       <el-menu-item index="/submit"
+                    @click="checkReload('/submit')"
                     style="float: right;"><i class="el-icon-upload2"></i></el-menu-item>
       <el-menu-item index="/dashboard/me"
+                    @click="checkReload('/dashboard/me')"
                     style="float: right;"><img :src="icon"
              class="icon_img"
              height="60px"
@@ -28,7 +38,7 @@
       <!-- <el-menu-item index="/dashboard/me"
                       style="float: right;"><i class="el-icon-set-up"></i>仪表板</el-menu-item> -->
     </el-menu>
-    <nuxt />
+    <nuxt v-if="isRouterAlive" />
     <el-divider></el-divider>
     <el-row type="flex"
             justify="space-around">
@@ -50,13 +60,29 @@
 </template>
 
 <script>
+const reload = Symbol(1)
+
 export default {
   name: 'app',
   mounted: function () {
     // this.activeIndex = this.$route.path
     this.switchNav(this.$route.path)
   },
+  provide () {
+    return {
+      [reload]: this.reload
+    }
+  },
   methods: {
+    checkReload (i) {
+      if (i === this.$route.path) this.reload()
+    },
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(function () {
+        this.isRouterAlive = true
+      })
+    },
     GotoAbout: function () {
       this.$router.push('/about')
     },
@@ -106,7 +132,8 @@ export default {
     return {
       activeIndex: '/',
       icon: 'https://static.hdslb.com/images/member/noface.gif',
-      headIcon: 'logoBlue'
+      headIcon: 'logoBlue',
+      isRouterAlive: true
     }
   },
   watch: {

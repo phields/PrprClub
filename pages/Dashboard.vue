@@ -10,8 +10,8 @@
             <!-- <el-menu-item index="/dashboard/me">
               <svgicon iconClass="logoPink"
                        width="134.34"
-                       height="60" /> -->
-            </el-menu-item>
+                       height="60" />
+            </el-menu-item>-->
             <!-- <el-menu-item index="/dashboard/me">我</el-menu-item> -->
             <el-menu-item index="/dashboard/works"><i class="el-icon-picture-outline-round"></i>作品</el-menu-item>
             <el-menu-item index="/dashboard/projects"><i class="el-icon-s-order"></i>企划</el-menu-item>
