@@ -43,7 +43,7 @@ export default {
       this.work = GetWork(this.workId)
     },
     pushNavigation () {
-      this.$router.push('/discover/' + this.work.Type + '/' + this.workId)
+      this.$router.push('/' + this.work.Type + '/' + this.workId)
     }
   },
   watch: {

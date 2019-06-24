@@ -62,7 +62,7 @@ export default {
       this.isLoading = false
     },
     pushNavigation () {
-      this.$router.push('/discover/' + this.work.Type + '/' + this.workId)
+      this.$router.push('/' + this.work.Type + '/' + this.workId)
     }
   },
   watch: {

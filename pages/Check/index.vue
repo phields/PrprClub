@@ -13,7 +13,7 @@
     </div>
     <p v-else>
       Please
-      <NuxtLink to="/login">
+      <NuxtLink to="/dashboard/login">
         login
       </NuxtLink>.
     </p>
@@ -25,7 +25,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   methods: {
-    logout() {
+    logout () {
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)
     }

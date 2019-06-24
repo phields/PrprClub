@@ -7,9 +7,9 @@ import {
   // DropdownMenu,
   // DropdownItem,
   Menu,
-  // Submenu,
+  Submenu,
   MenuItem,
-  // MenuItemGroup,
+  MenuItemGroup,
   // Input,
   // InputNumber,
   // Radio,
@@ -47,8 +47,8 @@ import {
   // Icon,
   Row,
   Col,
-  // Upload,
-  // Progress,
+  Upload,
+  Progress,
   // Spinner,
   // Message,
   // Badge,
@@ -84,9 +84,9 @@ Vue.use(Dialog)
 // Vue.use(DropdownMenu)
 // Vue.use(DropdownItem)
 Vue.use(Menu)
-// Vue.use(Submenu)
+Vue.use(Submenu)
 Vue.use(MenuItem)
-// Vue.use(MenuItemGroup)
+Vue.use(MenuItemGroup)
 // Vue.use(Input)
 // Vue.use(InputNumber)
 // Vue.use(Radio)
@@ -121,8 +121,8 @@ Vue.use(Button)
 // Vue.use(Icon)
 Vue.use(Row)
 Vue.use(Col)
-// Vue.use(Upload)
-// Vue.use(Progress)
+Vue.use(Upload)
+Vue.use(Progress)
 // Vue.use(Badge)
 Vue.use(Card)
 // Vue.use(Rate)
