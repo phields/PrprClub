@@ -20,8 +20,8 @@
             <el-submenu index="/dashboard/settings">
               <template slot="title"><i class="el-icon-setting"></i><span>设置</span></template>
               <el-menu-item-group>
-                <el-menu-item index="/dashboard/settings/userdetail">个人资料</el-menu-item>
-                <el-menu-item index="/dashboard/settings/image">更改头像</el-menu-item>
+                <el-menu-item index="/dashboard/settings/userdetail"><i class="el-icon-postcard"></i>个人资料</el-menu-item>
+                <el-menu-item index="/dashboard/settings/image"><i class="el-icon-s-custom"></i>更改头像</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
           </el-menu>

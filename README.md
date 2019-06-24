@@ -24,6 +24,10 @@ qn❘ↃɹdɹԀ
 
 关于头像上传，请参阅：[vue-image-crop-upload](https://github.com/dai-siki/vue-image-crop-upload)
 
+请查阅甲♂方所给的最新Req（在Trello）。
+
+关于Contributions，[这里](https://help.github.com/en/articles/why-are-my-contributions-not-showing-up-on-my-profile)可供参考。
+
 > 06-21 Il Harper
 
 已经迁移到了Nuxt。查阅NuxtNotice.md获取信息。

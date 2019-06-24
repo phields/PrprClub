@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import 'babel-polyfill' // es6 shim
+import 'babel-polyfill'
 import myUpload from 'vue-image-crop-upload'
 
 export default {

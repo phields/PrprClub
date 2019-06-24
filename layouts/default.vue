@@ -116,6 +116,9 @@ export default {
             case 'adoption':
               this.activeIndex = '/adoption'
               break
+            case 'submit':
+              this.activeIndex = '/submit'
+              break
             default:
               this.activeIndex = '/'
               finished = false
