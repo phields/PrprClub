@@ -16,8 +16,15 @@
             <el-menu-item index="/dashboard/me"><i class="el-icon-s-home"></i>个人中心</el-menu-item>
             <el-menu-item index="/dashboard/works"><i class="el-icon-picture-outline-round"></i>作品</el-menu-item>
             <el-menu-item index="/dashboard/projects"><i class="el-icon-s-order"></i>企划</el-menu-item>
+            <el-submenu><template slot="title"><i class="el-icon-s-ticket"></i>申请</template>
+              <el-menu-item-group>
+                <el-menu-item index="/dashboard/requests/overview"><i class="el-icon-finished"></i>概览</el-menu-item>
+                <el-menu-item index="/dashboard/requests/created"><i class="el-icon-upload2"></i>我创建的</el-menu-item>
+                <el-menu-item index="/dashboard/requests/received"><i class="el-icon-download"></i>我收到的</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
             <el-menu-item index="/dashboard/messages"><i class="el-icon-chat-line-round"></i>消息</el-menu-item>
-            <el-submenu index="/dashboard/settings">
+            <el-submenu>
               <template slot="title"><i class="el-icon-setting"></i><span>设置</span></template>
               <el-menu-item-group>
                 <el-menu-item index="/dashboard/settings/userdetail"><i class="el-icon-postcard"></i>个人资料</el-menu-item>

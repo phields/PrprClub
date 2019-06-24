@@ -1,3 +1,3 @@
 <template>
-  <div></div>
+  <div>REQ</div>
 </template>
