@@ -24,17 +24,31 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-	implementation("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.boot:spring-security-crypto")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:5.9.0")
+
+	implementation("org.mongodb", "mongodb-driver", "3.10.2") {
+		isTransitive = false
+	}
+	implementation("org.mongodb", "mongodb-driver-core", "3.10.2")
+	implementation("org.mongodb", "bson", "3.10.2")
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb") {
+		exclude("org.mongodb", "mongodb-driver")
+	}
+
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.security:spring-security-jwt:1.0.10.RELEASE")
+	implementation("org.springframework.security.oauth:spring-security-oauth2:2.3.6.RELEASE")
+
+	implementation("io.jsonwebtoken:jjwt:0.9.1")
+	//implementation("org.springframework.boot:spring-security-crypto")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	runtimeOnly("mysql:mysql-connector-java")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 }
