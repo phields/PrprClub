@@ -30,6 +30,7 @@
                     @click="checkReload('/submit')"
                     style="float: right;"><i class="el-icon-upload2"></i></el-menu-item>
       <el-menu-item index="/dashboard/me"
+                    class="icon_img_div"
                     @click="checkReload('/dashboard/me')"
                     style="float: right;"><img :src="icon"
              class="icon_img"

@@ -13,10 +13,17 @@
                        height="60" />
             </el-menu-item>-->
             <!-- <el-menu-item index="/dashboard/me">我</el-menu-item> -->
+            <el-menu-item index="/dashboard/me"><i class="el-icon-s-home"></i>个人中心</el-menu-item>
             <el-menu-item index="/dashboard/works"><i class="el-icon-picture-outline-round"></i>作品</el-menu-item>
             <el-menu-item index="/dashboard/projects"><i class="el-icon-s-order"></i>企划</el-menu-item>
             <el-menu-item index="/dashboard/messages"><i class="el-icon-chat-line-round"></i>消息</el-menu-item>
-            <el-menu-item index="/dashboard/settings"><i class="el-icon-setting"></i>设置</el-menu-item>
+            <el-submenu index="/dashboard/settings">
+              <template slot="title"><i class="el-icon-setting"></i><span>设置</span></template>
+              <el-menu-item-group>
+                <el-menu-item index="/dashboard/settings/userdetail">个人资料</el-menu-item>
+                <el-menu-item index="/dashboard/settings/image">更改头像</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
           </el-menu>
         </el-col>
         <el-col :span="20">

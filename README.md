@@ -16,6 +16,14 @@ qn❘ↃɹdɹԀ
 
 * Components.md 组件使用指南
 
+> 06-22 Il Harper
+
+要在页面内部实现刷新，请使用DI。Eg：
+
+`inject: ['reload']`后直接调用`this.reload()`。
+
+关于头像上传，请参阅：[vue-image-crop-upload](https://github.com/dai-siki/vue-image-crop-upload)
+
 > 06-21 Il Harper
 
 已经迁移到了Nuxt。查阅NuxtNotice.md获取信息。
