@@ -1,4 +1,19 @@
 spring:
   data:
+    rest:
+      base-path: /api
     mongodb:
       uri: mongodb://localhost:27017/prprclub
+
+graphiql:
+  mapping: /api
+  endpoint:
+    graphql: /graphql
+    subscriptions: /subscriptions
+  subscriptions:
+    timeout: 30
+    reconnect: false
+  static:
+    basePath: /
+  enabled: true
+  pageTitle: GraphiQL

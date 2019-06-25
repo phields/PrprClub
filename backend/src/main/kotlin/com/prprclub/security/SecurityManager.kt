@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher
+
 
 @Configuration
 @EnableWebSecurity
@@ -25,18 +28,29 @@ class SecurityManager: WebSecurityConfigurerAdapter() {
                 .authorizeRequests()
                     .anyRequest().permitAll()
                 .and()
-                .formLogin()
+                .addFilterBefore(
+                        authenticationFilter(),
+                        UsernamePasswordAuthenticationFilter::class.java)
+                /*.formLogin()
                     .loginProcessingUrl("/login")
                     .usernameParameter("username")
                     .passwordParameter("password")
                     .successHandler(authResultHandler)
-                    .failureHandler(authResultHandler)
+                    .failureHandler(authResultHandler)*/
     }
 
     override fun userDetailsService(): UserDetailsService = userDetailsService
 
     @Bean
-    fun passwordEncoder(): PasswordEncoder {
-        return BCryptPasswordEncoder()
+    fun passwordEncoder(): PasswordEncoder = BCryptPasswordEncoder()
+
+    @Bean
+    fun authenticationFilter(): JSONLoginCaptchaFilter {
+        return JSONLoginCaptchaFilter().apply {
+            setAuthenticationSuccessHandler(authResultHandler)
+            setAuthenticationFailureHandler(authResultHandler)
+            setRequiresAuthenticationRequestMatcher(AntPathRequestMatcher("/login", "POST"))
+            setAuthenticationManager(authenticationManagerBean())
+        }
     }
 }
