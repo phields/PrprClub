@@ -44,6 +44,12 @@
 <script>
 export default {
   name: 'discover',
+  layout: 'defaultpink',
+  head () {
+    return {
+      title: '仪表板 —— PrprClub'
+    }
+  },
   components: {},
   mounted: function () {
     this.activeIndex = this.$route.path
@@ -64,6 +70,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
 @import "~/assets/pink.scss";
 </style>

@@ -1,13 +1,12 @@
 <template>
-  <div>REQ</div>
+  <nuxt-child />
 </template>
 
 <script>
 export default {
-  name: 'requests',
   head () {
     return {
-      title: '申请 —— PrprClub'
+      title: '设置中心 —— PrprClub'
     }
   }
 }
