@@ -6,7 +6,7 @@
              class="menu">
       <el-menu-item index="/"
                     @click="checkReload('/')">
-        <svgicon iconClass="logoBlue"
+        <svgicon iconClass="logoPink"
                  width="134.34"
                  height="60" />
       </el-menu-item>
@@ -147,3 +147,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~/assets/pink.scss";
+</style>

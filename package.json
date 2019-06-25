@@ -2,6 +2,7 @@
   "name": "prprclub",
   "version": "0.1.0",
   "private": true,
+  "description": "We're PrprClub!",
   "scripts": {
     "lint": "vue-cli-service lint .",
     "dev": "nuxt",
