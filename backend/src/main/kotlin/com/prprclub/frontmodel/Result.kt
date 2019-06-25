@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude
 object ResultCodes {
         const val SUCCESS = 0
         const val GENERAL_ERROR = -1
+        const val MALFORMED_REQUEST = -2
+
         const val BAD_CREDENTIALS = -101
 }
 

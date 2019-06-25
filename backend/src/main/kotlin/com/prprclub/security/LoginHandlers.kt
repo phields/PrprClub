@@ -3,6 +3,7 @@ package com.prprclub.security
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.prprclub.frontmodel.Result
 import com.prprclub.frontmodel.ResultCodes
+import com.prprclub.utils.writeAndFlush
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.beans.factory.annotation.Autowired
@@ -34,8 +35,7 @@ class AuthenticationResultHandler: AuthenticationFailureHandler, AuthenticationS
                 message = exception.message ?: "error"
         ))
 
-        response.writer.print(resp)
-        response.writer.close()
+        response.writeAndFlush(resp)
     }
 
     override fun onAuthenticationSuccess(
@@ -55,12 +55,7 @@ class AuthenticationResultHandler: AuthenticationFailureHandler, AuthenticationS
                 data = LoginSuccessResult(token)
         ))
 
-        response.characterEncoding = "UTF-8"
-        response.writer.apply {
-            print(resp)
-            flush()
-            close()
-        }
+        response.writeAndFlush(resp)
     }
 }
 

@@ -7,6 +7,4 @@ import org.springframework.stereotype.Repository
 interface BasicUserRepository: MongoRepository<BasicUser, Long> {
     fun findByUsername(username: String): BasicUser?
     fun findByPhone(phone: String): BasicUser?
-
-    fun save()
 }

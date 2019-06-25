@@ -26,6 +26,7 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:5.9.0")
+	implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:5.9.0")
 
 	implementation("org.mongodb", "mongodb-driver", "3.10.2") {
 		isTransitive = false
