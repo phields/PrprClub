@@ -129,9 +129,9 @@ export default {
           }
         })
       } catch (e) { }
-      if (p.indexOf('dashboard') >= 0 || 
-      p.indexOf('login') >= 0 || 
-      p.indexOf('register') >= 0) this.activeIndex = '/dashboard/me'
+      if (p.indexOf('dashboard') >= 0 ||
+        p.indexOf('login') >= 0 ||
+        p.indexOf('register') >= 0) this.activeIndex = '/dashboard/me'
     }
   },
   data: function () {

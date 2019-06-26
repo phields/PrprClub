@@ -7,6 +7,7 @@
              width="500px"
              height="500px"></el-col>
       <el-col :span="6">
+        <h1>登录</h1>
         <el-form ref="form"
                  :model="form"
                  label-width="80px"
@@ -38,7 +39,7 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary"
-                       @click="onSubmit">登录</el-button>
+                       @click="submit">登录</el-button>
             <el-button @click="$router.push('/register')">注册</el-button>
           </el-form-item>
         </el-form>
@@ -66,7 +67,6 @@ export default {
         return callback(new Error('手机号不能为空'))
       } else {
         const reg = /^1[3|4|5|7|8][0-9]\d{8}$/
-        console.log(reg.test(value))
         if (reg.test(value)) {
           callback()
         } else {
@@ -102,7 +102,7 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+    submit () {
       this.isLoading = true
       this.axios.post('/api/login', {
         phone: this.form.phone,
@@ -118,10 +118,10 @@ export default {
           Cookie.set('token', result.data.token)
           this.isLoading = false
           this.$router.push('/')
-        })
+        }.bind(this))
         .catch(function (error) {
-          console.log(error)
-        })
+          this.$router.push({ path: '/error', query: { code: -1, err: error } })
+        }.bind(this))
     }
   }
 }

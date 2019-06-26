@@ -1,11 +1,8 @@
 function ParseUniversal (jsonData) {
   var data = JSON.parse(jsonData)
-  var result
+  var result = { success: false, code: data.code, data: data.data, msg: '' }
   if (data.code === 0) result.success = true
   else result.success = false
-  result.msg = ''
-  result.code = data.code
-  result.data = data.data
   switch (data.code) {
     case 0:
       result.msg = '成功'
@@ -34,61 +31,8 @@ function ParseUniversal (jsonData) {
     case -103:
       result.msg = '验证码无效'
       break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
-    case -111:
-      result.msg = '验证码错误'
-      break
     default:
+      result.msg = '未知错误'
       break
   }
   return result

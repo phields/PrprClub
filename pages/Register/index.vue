@@ -7,6 +7,7 @@
              width="500px"
              height="500px"></el-col>
       <el-col :span="6">
+        <h1>欢迎加入~</h1>
         <el-form ref="form"
                  :model="form"
                  label-width="80px"
@@ -14,6 +15,10 @@
                  style="margin: 20px;"
                  v-loading="isLoading"
                  :rules="rules">
+          <el-form-item label="昵称"
+                        prop="name">
+            <el-input v-model="form.name"></el-input>
+          </el-form-item>
           <el-form-item label="手机号"
                         prop="phone">
             <el-input v-model="form.phone"></el-input>
@@ -21,17 +26,27 @@
           <el-form-item label="密码"
                         prop="passwd">
             <el-input v-model="form.passwd"
-                      type="password"></el-input>
+                      :type="showPasswd ? 'text' : 'password'">
+              <svgicon :iconClass="showPasswd ? 'show-passwd' : 'hide-passwd'"
+                       width="20"
+                       height="15"
+                       @click.native="showPasswd = !showPasswd"
+                       slot="suffix"
+                       alt=""
+                       style="cursor: pointer;" />
+            </el-input>
           </el-form-item>
-          <el-form-item>
-            <el-checkbox label="记住我"
-                         v-model="form.rememberMe"
-                         name="rememberMe"></el-checkbox>
+          <el-form-item label="验证码"
+                        prop="veri">
+            <el-input v-model="form.veri"></el-input>
+            <el-button :disabled="!isVeriEnabled"
+                       @click="getCode"
+                       style="margin: 6px;">{{ veriButtonText + countOutput }}</el-button>
           </el-form-item>
           <el-form-item>
             <el-button type="primary"
-                       @click="onSubmit">登录</el-button>
-            <el-button @click="$router.push('/register')">注册</el-button>
+                       @click="submit">注册</el-button>
+            <el-button @click="$router.push('/login')">登录</el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -58,7 +73,6 @@ export default {
         return callback(new Error('手机号不能为空'))
       } else {
         const reg = /^1[3|4|5|7|8][0-9]\d{8}$/
-        console.log(reg.test(value))
         if (reg.test(value)) {
           callback()
         } else {
@@ -68,14 +82,20 @@ export default {
     }
     return {
       form: {
+        name: '',
         phone: '',
         passwd: '',
-        rememberMe: false
+        veri: ''
       },
       isLoading: false,
+      showPasswd: false,
+      veriButtonText: '获取验证码',
+      isVeriEnabled: true,
+      count: '',
+      timer: null,
       rules: {
         phone: [
-          { validator: checkPhone, trigger: 'blur' }
+          { validator: checkPhone, trigger: 'blur', required: true }
         ],
         passwd: [{
           required: true,
@@ -88,16 +108,36 @@ export default {
         }, {
           pattern: /^(\w){6,20}$/,
           message: '只能输入6-20个字母、数字、下划线'
-        }]
+        }],
+        veri: [
+          {
+            required: true,
+            message: '请输入验证码',
+            trigger: 'blur'
+          }, {
+            min: 6,
+            max: 6,
+            message: '长度为6位'
+          }
+        ],
+        name: [
+          {
+            required: true,
+            message: '请输入昵称',
+            trigger: 'blur'
+          }
+        ]
       }
     }
   },
   methods: {
-    onSubmit () {
+    submit () {
       this.isLoading = true
-      this.axios.post('/api/login', {
+      this.axios.post('/api/register', {
         phone: this.form.phone,
-        captcha: '123456'
+        password: this.form.passwd,
+        verifyCode: '123456',
+        username: ''
       })
         .then(function (response) {
           let result = ParseUniversal(response)
@@ -109,10 +149,39 @@ export default {
           Cookie.set('token', result.data.token)
           this.isLoading = false
           this.$router.push('/')
-        })
+        }.bind(this))
         .catch(function (error) {
-          console.log(error)
+          this.$router.push({ path: '/error', query: { code: -1, err: error } })
+        }.bind(this))
+    },
+    getCode () {
+      const TIME_COUNT = 60
+      if (!this.timer) {
+        this.axios.post('/api/send_verify', {
+          phone: this.form.phone,
+          captcha: '123456'
         })
+          .catch(function (error) {
+            this.$router.push({ path: '/error', query: { code: -1, err: error } })
+          }.bind(this))
+        this.count = TIME_COUNT
+        this.isVeriEnabled = false
+        this.timer = setInterval(() => {
+          if (this.count > 0 && this.count <= TIME_COUNT) {
+            this.count--
+          } else {
+            this.isVeriEnabled = true
+            clearInterval(this.timer)
+            this.timer = null
+          }
+        }, 1000)
+      }
+    }
+  },
+  computed: {
+    countOutput () {
+      if (this.count > 0) return '（' + this.count + '）'
+      else return ''
     }
   }
 }
