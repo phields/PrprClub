@@ -6,7 +6,7 @@
              class="image center"
              width="500px"
              height="500px"></el-col>
-      <el-col :span="6">
+      <el-col :span="8">
         <h1>登录</h1>
         <el-form ref="form"
                  :model="form"
@@ -14,7 +14,8 @@
                  label-position="right"
                  style="margin: 20px;"
                  v-loading="isLoading"
-                 :rules="rules">
+                 :rules="rules"
+                 @validate="vali">
           <el-form-item label="手机号"
                         prop="phone">
             <el-input v-model="form.phone"></el-input>
@@ -39,8 +40,10 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary"
-                       @click="submit">登录</el-button>
-            <el-button @click="$router.push('/register')">注册</el-button>
+                       @click="submit"
+                       :disabled="!isSubmitEnabled">登录</el-button>
+            <el-link @click="$router.push('/register')"
+                     style="float: right;">注册</el-link>
           </el-form-item>
         </el-form>
       </el-col>
@@ -82,6 +85,7 @@ export default {
       },
       isLoading: false,
       showPasswd: false,
+      isSubmitEnabled: false,
       rules: {
         phone: [
           { validator: checkPhone, trigger: 'blur', required: true }
@@ -103,6 +107,14 @@ export default {
   },
   methods: {
     submit () {
+      let valid = false
+      this.$refs['form'].validate((v) => {
+        valid = v
+      })
+      if (!valid) {
+        this.isSubmitEnabled = false
+        return
+      }
       this.isLoading = true
       this.axios.post('/api/login', {
         phone: this.form.phone,
@@ -122,6 +134,9 @@ export default {
         .catch(function (error) {
           this.$router.push({ path: '/error', query: { code: -1, err: error } })
         }.bind(this))
+    },
+    vali (o, p, msg) {
+      this.isSubmitEnabled = p
     }
   }
 }

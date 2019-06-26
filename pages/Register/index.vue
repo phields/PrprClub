@@ -6,7 +6,7 @@
              class="image center"
              width="500px"
              height="500px"></el-col>
-      <el-col :span="6">
+      <el-col :span="8">
         <h1>欢迎加入~</h1>
         <el-form ref="form"
                  :model="form"
@@ -14,7 +14,8 @@
                  label-position="right"
                  style="margin: 20px;"
                  v-loading="isLoading"
-                 :rules="rules">
+                 :rules="rules"
+                 @validate="vali">
           <el-form-item label="昵称"
                         prop="name">
             <el-input v-model="form.name"></el-input>
@@ -44,9 +45,16 @@
                        style="margin: 6px;">{{ veriButtonText + countOutput }}</el-button>
           </el-form-item>
           <el-form-item>
+            <p style="margin: 10px">注册即表明您同意我们的<el-link>使用协议</el-link>和<el-link>社区规范</el-link>
+            </p>
+            <!--嘛这俩文档应该是在教程站吧……弄个什么子域名吧……-->
+          </el-form-item>
+          <el-form-item>
             <el-button type="primary"
-                       @click="submit">注册</el-button>
-            <el-button @click="$router.push('/login')">登录</el-button>
+                       @click="submit"
+                       :disabled="!isSubmitEnabled">注册</el-button>
+            <el-link @click="$router.push('/login')"
+                     style="float: right;">登录</el-link>
           </el-form-item>
         </el-form>
       </el-col>
@@ -93,6 +101,7 @@ export default {
       isVeriEnabled: true,
       count: '',
       timer: null,
+      isSubmitEnabled: false,
       rules: {
         phone: [
           { validator: checkPhone, trigger: 'blur', required: true }
@@ -132,6 +141,14 @@ export default {
   },
   methods: {
     submit () {
+      let valid = false
+      this.$refs['form'].validate((v) => {
+        valid = v
+      })
+      if (!valid) {
+        this.isSubmitEnabled = false
+        return
+      }
       this.isLoading = true
       this.axios.post('/api/register', {
         phone: this.form.phone,
@@ -176,6 +193,9 @@ export default {
           }
         }, 1000)
       }
+    },
+    vali (o, p, msg) {
+      this.isSubmitEnabled = p
     }
   },
   computed: {
