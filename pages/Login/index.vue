@@ -41,7 +41,7 @@ import 'vue'
 import 'axios'
 import 'vue-axios'
 
-import 'https://recaptcha.net/recaptcha/api.js'
+// import 'https://recaptcha.net/recaptcha/api.js'
 
 import { ParseUniversal } from '~/parsers/universalParser'
 
