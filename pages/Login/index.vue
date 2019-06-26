@@ -64,6 +64,11 @@ const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   middleware: 'notauthenticated',
+  head () {
+    return {
+      title: '登录 —— PrprClub'
+    }
+  },
   data () {
     var checkPhone = (rule, value, callback) => {
       if (!value) {
