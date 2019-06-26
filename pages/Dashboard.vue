@@ -52,6 +52,7 @@
 export default {
   name: 'discover',
   layout: 'defaultpink',
+  middleware: 'authenticated',
   head () {
     return {
       title: '仪表板 —— PrprClub'
