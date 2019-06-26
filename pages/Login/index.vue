@@ -12,13 +12,24 @@
                  label-width="80px"
                  label-position="right"
                  style="margin: 20px;"
-                 v-loading="isLoading">
-          <el-form-item label="手机号">
+                 v-loading="isLoading"
+                 :rules="rules">
+          <el-form-item label="手机号"
+                        prop="phone">
             <el-input v-model="form.phone"></el-input>
           </el-form-item>
-          <el-form-item label="密码">
+          <el-form-item label="密码"
+                        prop="passwd">
             <el-input v-model="form.passwd"
-                      type="password"></el-input>
+                      :type="showPasswd ? 'text' : 'password'">
+              <svgicon :iconClass="showPasswd ? 'show-passwd' : 'hide-passwd'"
+                       width="20"
+                       height="15"
+                       @click.native="showPasswd = !showPasswd"
+                       slot="suffix"
+                       alt=""
+                       style="cursor: pointer;" />
+            </el-input>
           </el-form-item>
           <el-form-item>
             <el-checkbox label="记住我"
@@ -50,13 +61,44 @@ const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   middleware: 'notauthenticated',
   data () {
+    var checkPhone = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('手机号不能为空'))
+      } else {
+        const reg = /^1[3|4|5|7|8][0-9]\d{8}$/
+        console.log(reg.test(value))
+        if (reg.test(value)) {
+          callback()
+        } else {
+          return callback(new Error('请输入正确的手机号'))
+        }
+      }
+    }
     return {
       form: {
         phone: '',
         passwd: '',
         rememberMe: false
       },
-      isLoading: false
+      isLoading: false,
+      showPasswd: false,
+      rules: {
+        phone: [
+          { validator: checkPhone, trigger: 'blur', required: true }
+        ],
+        passwd: [{
+          required: true,
+          message: '请输入密码',
+          trigger: 'blur'
+        }, {
+          min: 6,
+          max: 20,
+          message: '长度在 6 到 20 个字符'
+        }, {
+          pattern: /^(\w){6,20}$/,
+          message: '只能输入6-20个字母、数字、下划线'
+        }]
+      }
     }
   },
   methods: {
@@ -64,24 +106,22 @@ export default {
       this.isLoading = true
       this.axios.post('/api/login', {
         phone: this.form.phone,
-        captcha: ''
+        captcha: '123456'
       })
         .then(function (response) {
-          // this.$store.commit('setToken', JSON.parse(response).token)
           let result = ParseUniversal(response)
           if (!result.success) {
             this.$router.push({ path: '/error', query: { code: result.code } })
             return
           }
           this.$store.commit('setToken', result.data.token)
+          Cookie.set('token', result.data.token)
+          this.isLoading = false
+          this.$router.push('/')
         })
         .catch(function (error) {
           console.log(error)
         })
-
-      Cookie.set('token', '')
-      this.$router.push('/')
-      this.isLoading = false
     }
   }
 }

@@ -25,6 +25,69 @@ function ParseUniversal (jsonData) {
     case -100:
       result.msg = '未登录'
       break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -101:
+      result.msg = '用户名或密码错误'
+      break
+    case -103:
+      result.msg = '验证码无效'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
+    case -111:
+      result.msg = '验证码错误'
+      break
     default:
       break
   }

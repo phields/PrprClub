@@ -2,16 +2,12 @@
 
 export const state = () => {
   return {
-    token: '',
-    auth: ''
+    token: ''
   }
 }
 
 export const mutations = {
   setToken (state, token) {
     state.token = token
-  },
-  setAuth (state, auth) {
-    state.auth = auth
   }
 }
