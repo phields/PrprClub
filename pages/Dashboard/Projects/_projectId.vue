@@ -6,8 +6,11 @@
 export default {
   head () {
     return {
-      title: '设置中心 —— PrprClub'
+      title: '企划' + this.$route.params.projectId + ' —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.projectId)
   }
 }
 </script>

@@ -86,3 +86,7 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+@import "~/assets/pink.scss";
+</style>

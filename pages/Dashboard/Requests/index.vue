@@ -10,8 +10,12 @@ export default {
       title: '申请 —— PrprClub'
     }
   },
-  mounted() {
+  mounted () {
     this.$router.push('/dashboard/requests/overview')
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~/assets/pink.scss";
+</style>
