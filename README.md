@@ -16,6 +16,10 @@ qn❘ↃɹdɹԀ
 
 * Components.md 组件使用指南
 
+> 06-27 Il Harper
+
+Request系统开始立项，请参阅RequestSystem.md。
+
 > 06-22 Il Harper
 
 要在页面内部实现刷新，请使用DI。Eg：

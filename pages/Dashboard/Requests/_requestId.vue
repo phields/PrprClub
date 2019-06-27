@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>{{$route.params.requestId}}</h1>
-  </div>
+  <nuxt-child />
 </template>
 
 <script>
@@ -10,6 +8,9 @@ export default {
     return {
       title: '申请' + this.$route.params.requestId + ' —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.id)
   }
 }
 </script>

@@ -10,6 +10,9 @@ export default {
     return {
       title: '立绘' + this.$route.params.drawingId + ' —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.id)
   }
 }
 </script>

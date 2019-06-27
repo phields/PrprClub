@@ -10,6 +10,9 @@ export default {
     return {
       title: '企划' + this.$route.params.projectId + ' —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.id)
   }
 }
 </script>

@@ -10,6 +10,9 @@ export default {
     return {
       title: '3D模型' + this.$route.params.modelId + ' —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.id)
   }
 }
 </script>
