@@ -121,7 +121,7 @@ export default {
       if (this.form.phone === '18234158179' && this.form.passwd === 'ddcentersaiko') {
         this.$store.commit('setToken', 'testToken')
         if (this.form.rememberMe) this.$cookies.set('token', 'testToken')
-        this.$router.push('/')
+        this.$router.go(-1)
         return
       }
       this.isLoading = true
@@ -138,7 +138,7 @@ export default {
           this.$store.commit('setToken', result.data.token)
           if (this.form.rememberMe) this.$cookies.set('token', 'testToken')
           this.isLoading = false
-          this.$router.push('/')
+          this.$router.go(-1)
         }.bind(this))
         .catch(function (error) {
           this.$router.push({ path: '/error', query: { code: -1, err: error } })
