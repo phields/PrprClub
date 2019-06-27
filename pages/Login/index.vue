@@ -90,7 +90,7 @@ export default {
       },
       isLoading: false,
       showPasswd: false,
-      isSubmitEnabled: false,
+      isSubmitEnabled: true,
       rules: {
         phone: [
           { validator: checkPhone, trigger: 'blur', required: true }

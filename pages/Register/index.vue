@@ -106,7 +106,7 @@ export default {
       isVeriEnabled: true,
       count: '',
       timer: null,
-      isSubmitEnabled: false,
+      isSubmitEnabled: true,
       rules: {
         phone: [
           { validator: checkPhone, trigger: 'blur', required: true }

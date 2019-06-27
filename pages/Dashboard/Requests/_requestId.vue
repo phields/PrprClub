@@ -10,7 +10,7 @@ export default {
     }
   },
   validate ({ params }) {
-    return /^\d+$/.test(params.id)
+    return /^\d+$/.test(params.requestId)
   }
 }
 </script>
