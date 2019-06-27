@@ -37,11 +37,35 @@
             </el-form-item>
           </el-form-item>
         </el-form>
-        <el-form :model="form">
-
+        <el-form :model="form"
+                 :inline="true"
+                 v-if="form.type === 'drawing' || form.type === 'live2d' || form.type === 'model'">
+          <el-form-item label="是否需要提供素材">
+            <el-radio-group v-model="form.reqType">
+              <el-radio label="我需要提供素材"></el-radio>
+              <el-radio label="我不需要提供素材"></el-radio>
+            </el-radio-group>
+          </el-form-item>
+          <p>若您需要提供素材，则创建申请后，企划的管理者在跟您协商后会提供给您素材；若不需要提供素材，则可直接上传作品并提出申请。</p>
+        </el-form>
+        <el-form :model="form"
+                 :inline="true"
+                 v-if="form.reqtype === '我不需要提供素材'">
+          <el-form-item label="您的作品ID：">
+            <el-input v-model="form.workId"></el-input>
+          </el-form-item>
+        </el-form>
+        <el-form :model="form"
+                 :inline="true"
+                 v-if="form.type === 'middle' || form.reqtype === '我需要提供素材'">
+          <p>只需轻敲“创建”即可创建申请。</p>
+        </el-form>
+        <el-form :model="form"
+                 :inline="true">
           <el-form-item>
             <el-button type="primary"
                        @click="onSubmit">创建</el-button>
+            <el-button @click="resetForm('form')">重置</el-button>
             <el-button @click="$router.go(-1)">取消</el-button>
           </el-form-item>
         </el-form>
@@ -62,13 +86,11 @@ export default {
     return {
       form: {
         type: '',
-        projId: ''
+        projId: '',
+        reqType: '',
+        workId: ''
       }
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "~/assets/pink.scss";
-</style>

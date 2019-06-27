@@ -5,7 +5,3 @@
                @click="$store.commit('setToken', ''); $router.push('/'); $cookies.remove('token')">安全退出</el-button>
   </div>
 </template>
-
-<style lang="scss" scoped>
-@import "~/assets/pink.scss";
-</style>
