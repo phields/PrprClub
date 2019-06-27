@@ -60,8 +60,6 @@ import 'vue-axios'
 
 import { ParseUniversal } from '~/parsers/universalParser'
 
-const Cookie = process.client ? require('js-cookie') : undefined
-
 export default {
   middleware: 'notauthenticated',
   head () {
@@ -122,7 +120,7 @@ export default {
       }
       if (this.form.phone === '18234158179' && this.form.passwd === 'ddcentersaiko') {
         this.$store.commit('setToken', 'testToken')
-        Cookie.set('token', 'testToken')
+        if (this.form.rememberMe) this.$cookies.set('token', 'testToken')
         this.$router.push('/')
         return
       }
@@ -138,7 +136,7 @@ export default {
             return
           }
           this.$store.commit('setToken', result.data.token)
-          Cookie.set('token', result.data.token)
+          if (this.form.rememberMe) this.$cookies.set('token', 'testToken')
           this.isLoading = false
           this.$router.push('/')
         }.bind(this))
