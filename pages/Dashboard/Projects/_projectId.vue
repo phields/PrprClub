@@ -6,11 +6,11 @@
 export default {
   head () {
     return {
-      title: '申请' + this.$route.params.requestId + ' —— PrprClub'
+      title: '企划' + this.$route.params.projectId + ' —— PrprClub'
     }
   },
   validate ({ params }) {
-    return /^\d+$/.test(params.requestId)
+    return /^\d+$/.test(params.projectId)
   }
 }
 </script>

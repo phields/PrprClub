@@ -10,6 +10,9 @@ export default {
     return {
       title: '模型' + this.$route.params.l2DId + ' —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.l2DId)
   }
 }
 </script>

@@ -2,6 +2,11 @@ import Vue from 'vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+import VueCookies from 'vue-cookies'
+
 const requireComponent = require.context('~/plugins', true, /.vue$/)
 
 requireComponent.keys().forEach(fileName => {
@@ -20,3 +25,6 @@ requireComponent.keys().forEach(fileName => {
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 const req = require.context('~/assets/svg', false, /\.svg$/)
 requireAll(req)
+
+Vue.use(VueAxios, axios)
+Vue.use(VueCookies)

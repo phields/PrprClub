@@ -23,7 +23,7 @@
         <a href="https://nuxtjs.org"
            target="_blank"
            rel="noopener">
-          <%= messages.nuxtjs %></a>
+          <!-- <%= messages.nuxtjs %> --></a>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ export default {
       return (this.error && this.error.statusCode) || 500
     },
     message () {
-      return this.error.message || `<%= messages.client_error %>`
+      return this.error.message // || `<%= messages.client_error %>`
     }
   }
 }

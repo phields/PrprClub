@@ -83,3 +83,17 @@ h1>small {
 .frame {
     margin: 12px;
 }
+
+.symbol_img {
+    height: 150px;
+    width: 80px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}

@@ -7,6 +7,7 @@
 <script>
 export default {
   name: 'submit',
+  middleware: 'authenticated',
   head () {
     return {
       title: '投稿 —— PrprClub'

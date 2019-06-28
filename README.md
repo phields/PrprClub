@@ -16,6 +16,20 @@ qn❘ↃɹdɹԀ
 
 * Components.md 组件使用指南
 
+* RequestSystem.md 申请系统概述
+
+* Images.md 图像资产分配指南
+
+* DesignGuide.md 甲方给的申请系统指南
+
+> 06-27 Il Harper
+
+Request系统开始立项，请参阅RequestSystem.md。
+
+关于图像资产的分配，请参阅Images.md。
+
+请注意/project/xxx和/dashboard/project/xxx不是一个页面。前者是给外人看的展览页面，后者是仪表板。
+
 > 06-22 Il Harper
 
 要在页面内部实现刷新，请使用DI。Eg：

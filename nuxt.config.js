@@ -5,6 +5,7 @@ module.exports = {
   srcDir: '',
   head: {
     title: 'PrprClub',
+    // titleTemplate: '%s —— PrprClub',
     meta: [{
       charset: 'utf-8'
     },
@@ -12,7 +13,25 @@ module.exports = {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0'
     },
-    { hid: 'description', name: 'description', content: pkg.description }
+    { hid: 'description', name: 'description', content: "We're PrprClub! " },
+    { equiv: 'X-UA-Compatible', content: 'IE=Edge,chrome=1' },
+    { equiv: 'Window-target', content: '_top' },
+    { name: 'author', content: 'DD Center' },
+    { name: 'keywords', content: 'DD Center,Prpr,PrprClub,虚拟偶像' },
+    { name: 'copyright', content: 'All Rights Reserved' },
+    { name: 'HandheldFriendly', content: 'true' },
+    { name: 'MobileOptimized', content: '320' },
+    { name: 'apple-mobile-web-app-title', content: 'PrprClub' },
+    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: '#ff48cb' },
+    { name: 'x5-page-mode', content: 'app' },
+    { name: 'browsermode', content: 'application' },
+    { name: 'msapplication-tap-highlight', content: 'no' },
+    { name: 'msapplication-TileColor', content: '#ff48cb' },
+    { name: 'msapplication-TileImage', content: '/mstile-icon.png' },
+    { name: 'renderer', content: 'webkit' },
+    { name: 'renderer', content: 'webkit' },
+    { name: 'renderer', content: 'webkit' }
     ],
     // link: [{
     //     rel: "shortcut icon",
@@ -21,7 +40,17 @@ module.exports = {
     //     href: "/logo.png"
     // }]
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon-precomposed', content: '/apple-touch-icon-144x144-precomposed.png' },
+      { rel: 'apple-touch-startup-image', sizes: '768x1004', href: '/splash-screen-768x1004.png' },
+      { rel: 'apple-touch-startup-image', sizes: '1536x2008', href: '/splash-screen-1536x2008.png' },
+      { rel: 'apple-touch-startup-image', sizes: '1024x748', href: '/Default-Portrait-1024x748.png' },
+      { rel: 'apple-touch-startup-image', sizes: '2048x1496', href: '/splash-screen-2048x1496.png' },
+      { rel: 'apple-touch-startup-image', href: '/splash-screen-320x480.png' },
+      { rel: 'apple-touch-startup-image', sizes: '640x960', href: '/splash-screen-640x960.png' },
+      { rel: 'apple-touch-startup-image', sizes: '640x1136', href: '/splash-screen-640x1136.png' },
+      { rel: 'shortcut icon', type: 'image/ico', href: '/favicon.ico' },
+      { rel: 'manifest', href: 'manifest.json' }
     ]
 
   },
@@ -61,7 +90,7 @@ module.exports = {
       loader: 'vue-style-loader!css-loader!sass-loader'
     }
     ],
-    extend(config, ctx) {
+    extend (config, ctx) {
       const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
       svgRule.exclude = [resolve(__dirname, 'assets/svg')]
 

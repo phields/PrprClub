@@ -45,7 +45,7 @@
             justify="space-around">
       <el-col :span="6">
         <div>
-          <el-link @click="GotoAbout"
+          <el-link @click="$router.push('/about')"
                    class="link"><i class="el-icon-office-building
 "></i>关于我们</el-link>
         </div>
@@ -83,9 +83,6 @@ export default {
       this.$nextTick(function () {
         this.isRouterAlive = true
       })
-    },
-    GotoAbout: function () {
-      this.$router.push('/about')
     },
     switchNav (p) {
       try {
@@ -129,7 +126,9 @@ export default {
           }
         })
       } catch (e) { }
-      if (p.indexOf('dashboard') >= 0) this.activeIndex = '/dashboard/me'
+      if (p.indexOf('dashboard') >= 0 ||
+        p.indexOf('login') >= 0 ||
+        p.indexOf('register') >= 0) this.activeIndex = '/dashboard/me'
     }
   },
   data: function () {

@@ -10,6 +10,9 @@ export default {
     return {
       title: this.$route.params.authorId + '的空间 —— PrprClub'
     }
+  },
+  validate ({ params }) {
+    return /^\d+$/.test(params.authorId)
   }
 }
 </script>
