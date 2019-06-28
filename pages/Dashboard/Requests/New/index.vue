@@ -49,7 +49,7 @@
                  :model="form"
                  :inline="true"
                  v-if="form.type === 'drawing' || form.type === 'live2d' || form.type === 'model'"
-                 :rules="rulesForReqType"
+                 :rules="rules"
                  @validate="vali">
           <el-form-item label="是否需要提供素材"
                         prop="reqType">
@@ -64,7 +64,7 @@
                  :model="form"
                  :inline="true"
                  v-if="form.reqType === 2"
-                 :rules="rulesForWorkId"
+                 :rules="rules"
                  @validate="vali">
           <el-form-item label="您的作品ID："
                         prop="workId">
@@ -127,52 +127,33 @@ export default {
             message: '请选择一项',
             trigger: 'blur'
           }
-        ]
-      },
-      rulesForWorkIdTrue: {
+        ],
         workId: [{
-          required: true,
-          message: '请输入作品ID',
+          validator: (r, v, cb) => {
+            if (this.form.reqType !== 2) return cb()
+            else if (v && v !== '') return cb()
+            else cb(new Error('请输入作品ID'))
+          },
           trigger: 'blur'
-        },
-        {
-          type: 'number',
-          message: '只能输入数字',
-          trigger: 'blur'
-        }]
-      },
-      rulesForWorkIdFalse: {
-        workId: []
-      },
-      rulesForReqTypeTrue: {
+        }],
         reqType: [
           {
-            required: true,
-            message: '请选择一项',
-            trigger: 'blur'
+            validator: (r, v, cb) => {
+              if (!(this.form.type === 'drawing' || this.form.type === 'live2d' || this.form.type === 'model')) return cb()
+              else if (v && v !== '') return cb()
+              else cb(new Error('请选择一项'))
+            },
+            trigger: 'change'
           }
         ]
-      },
-      rulesForReqTypeFalse: {
-        reqType: []
       }
-    }
-  },
-  computed: {
-    rulesForWorkId () {
-      if (this.form.reqType === 2) return this.rulesForWorkIdTrue
-      else return this.rulesForWorkIdFalse
-    },
-    rulesForReqType () {
-      if (this.form.type === 'drawing' || this.form.type === 'live2d' || this.form.type === 'model') return this.rulesForReqTypeTrue
-      else return this.rulesForReqTypeFalse
     }
   },
   methods: {
     submit () {
       let valid = true
       try {
-        this.$refs.form1.validate((v) => {
+        this.$refs['form1'].validate((v) => {
           valid = v
         })
       } catch (e) {
@@ -183,7 +164,7 @@ export default {
         return
       }
       try {
-        this.$refs.form2.validate((v) => {
+        this.$refs['form2'].validate((v) => {
           valid = v
         })
       } catch (e) {
@@ -194,7 +175,7 @@ export default {
         return
       }
       try {
-        this.$refs.form3.validate((v) => {
+        this.$refs['form3'].validate((v) => {
           valid = v
         })
       } catch (e) {
