@@ -1,11 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-	kotlin("plugin.jpa") version "1.2.71"
+	kotlin("plugin.jpa") version "1.3.0"
 	id("org.springframework.boot") version "2.1.6.RELEASE"
 	id("io.spring.dependency-management") version "1.0.7.RELEASE"
-	kotlin("jvm") version "1.2.71"
-	kotlin("plugin.spring") version "1.2.71"
+	kotlin("jvm") version "1.3.0"
+	kotlin("plugin.spring") version "1.3.0"
 }
 
 group = "com.prprclub"
@@ -40,11 +41,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.security:spring-security-jwt:1.0.10.RELEASE")
 	implementation("org.springframework.security.oauth:spring-security-oauth2:2.3.6.RELEASE")
-
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
-	//implementation("org.springframework.boot:spring-security-crypto")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    implementation("com.aliyun", "aliyun-java-sdk-core", "4.1.0")
 
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -59,4 +60,8 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "1.8"
 	}
+}
+
+tasks.withType<BootJar> {
+	archiveFileName.set("PrprClub-CI.jar")
 }
