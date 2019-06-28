@@ -39,7 +39,9 @@
           </el-form-item>
           <el-form-item label="验证码"
                         prop="veri">
-            <el-input v-model="form.veri"></el-input>
+            <el-input v-model.number="form.veri"
+                      type="number"
+                      onkeypress="return( /[\d]/.test(String.fromCharCode(event.keyCode) ) )"></el-input>
             <el-button :disabled="!isVeriEnabled"
                        @click="getCode"
                        style="margin: 6px;">{{ veriButtonText + countOutput }}</el-button>
@@ -101,12 +103,12 @@ export default {
         veri: ''
       },
       isLoading: false,
+      isSubmitEnabled: true,
       showPasswd: false,
       veriButtonText: '获取验证码',
       isVeriEnabled: true,
       count: '',
       timer: null,
-      isSubmitEnabled: true,
       rules: {
         phone: [
           { validator: checkPhone, trigger: 'blur', required: true }
@@ -132,6 +134,11 @@ export default {
             min: 6,
             max: 6,
             message: '长度为6位'
+          },
+          {
+            type: 'number',
+            message: '只能输入数字',
+            trigger: 'blur'
           }
         ],
         name: [
